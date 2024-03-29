@@ -115,7 +115,7 @@ async def dbtool(_, m : Message):
 
 #━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Broadcast ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-@Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
+@app.on_message(filters.private & filters.command('broadcast') & filters.user(cfg.SUDO))
 async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
         query = await full_userbase()
